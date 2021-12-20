@@ -1,0 +1,5 @@
+<%= render partial: "modal" %><br>
+<h1> Your recipes: </h1><br>
+<% @recipes.each do |recipe| %>
+    <%= render "recipe-card", recipe: recipe %>
+<% end %>

@@ -1,0 +1,28 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal">
+  New recipe
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="recipeModal" tabindex="-1" aria-labelledby="recipeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="recipeModalLabel">Create new recipe</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <%= form_with url: recipes_path, scope: :name, class: "mb-6" do |form| %>
+	        <div class="field">
+		    <%= form.text_area :text, placeholder: "Leave a comment...", rows: 3, required: true, class: "textarea has-fixed-size" %>
+	        </div>
+	        <%= form.submit "Submit", class: "button is-link" %>
+            <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save recipe</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

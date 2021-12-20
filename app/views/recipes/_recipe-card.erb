@@ -1,0 +1,15 @@
+<div class="card mb-3 mt-3">
+  <div class="card-body">
+    <h5 class="card-title"><%= recipe.name %></h5>
+    <p class="card-text"> <%= recipe.description %> </p>
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+        <label class="btn btn-outline-success" for="btnradio1">Public</label>
+    
+        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+        <label class="btn btn-outline-danger" for="btnradio2">Private</label>
+    </div>
+    <p class="card-text"><small class="text-muted">Preparation time: <%= recipe.preparation_time %><br> Cooking time: <%= recipe.cooking_time %> <br></small></p>
+    <button type="button" class="btn btn-danger">Delete</button>
+  </div>
+</div>
