@@ -1,0 +1,12 @@
+<div class="col-6">
+  <div class="card mb-3 mt-3">
+    <div class="card-body">
+      <%= link_to recipe.name, recipe_path(recipe.id), class: "btn btn-primary mb-2" %>
+      <p class="card-text"> <%= recipe.description %> </p>
+      <p class="card-text"><small class="text-muted">Preparation time: <%= recipe.preparation_time %><br> Cooking time: <%= recipe.cooking_time %> <br></small></p>
+      <% if can? :destroy, recipe %>
+          <%= link_to "Delete", recipe_path(recipe.id), remote: true, method: :delete, class: "btn btn-danger" %>
+      <% end %>
+    </div>
+  </div>
+</div>

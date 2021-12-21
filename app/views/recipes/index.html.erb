@@ -1,0 +1,11 @@
+<div class="mx-3">
+    <%= render partial: "modal" %><br>
+</div>
+<h1 class="mx-3"> Your recipes: </h1><br>
+<div class="container">
+  <div class="row">
+    <% @recipes.each do |recipe| %>
+         <%= render "recipe-card", recipe: recipe %>
+    <% end %>
+  </div>
+</div>
