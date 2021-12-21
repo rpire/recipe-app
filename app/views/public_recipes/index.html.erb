@@ -1,6 +1,4 @@
 <h1>Hello Reshy!</h1>
-<%= link_to "New Recipe" , new_recipe_path if can? :create, Recipe %>
-<%= link_to "New Food" , new_food_path if can? :create, Food %>
 <% @recipes.each do  |recipe| %>
     <h1><%= recipe.name %></h1>
 <% end %>

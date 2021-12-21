@@ -1,1 +1,10 @@
-<h1> <%= @recipe.name %> </h1>
+<%= link_to 'Back to the recipes', recipes_path, class: "btn btn-primary mb-5 mx-5" %>
+<div class="card mx-5 p-5">
+  <div class="card-body">
+    <h1 class="card-title"><%= @recipe.name %></h1>
+    <p class="card-text my-5"><%= @recipe.description %></p>
+    <p class="card-text"><small class="text-muted">Preparation time: <%= @recipe.preparation_time %></small></p>
+    <p class="card-text"><small class="text-muted">Cooking time: <%= @recipe.cooking_time%></small></p>
+  </div><br>
+  <button type="button" class="btn btn-success mt-3" style="width:18rem;">Add ingredient</button>
+</div>

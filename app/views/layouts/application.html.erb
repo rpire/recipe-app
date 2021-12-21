@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <% if can? :create, Recipe %>
+    <% if user_signed_in? %>
       <%= render '../views/layouts/nav-logged'%>
     <% else %>
       <%= render '../views/layouts/nav-new'%>

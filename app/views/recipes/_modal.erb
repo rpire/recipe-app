@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#recipeModal">
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#recipeModal">
   New recipe
 </button>
 
@@ -34,12 +34,13 @@
 
                 </div>
                 <br>
-	            <%= form.submit 'Submit', class: "btn btn-success" %>
-            <% end %>
+	            
+            
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save recipe</button>
+        <%= form.submit 'Save recipe', class: "btn btn-success" %>
+        <% end %>
       </div>
     </div>
   </div>
