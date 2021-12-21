@@ -1,6 +1,8 @@
-<button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#ingredientModal">
-  Add ingredient
-</button>
+<% if current_user.id == recipe.user_id %>
+  <button type="button" class="btn btn-success mt-3" data-bs-toggle="modal" data-bs-target="#ingredientModal">
+    Add ingredient
+  </button>
+<% end %>
 
 <!-- Modal -->
 <div class="modal fade" id="ingredientModal" tabindex="-1" aria-labelledby="ingredientModalLabel" aria-hidden="true">
