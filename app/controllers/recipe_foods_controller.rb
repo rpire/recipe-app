@@ -12,7 +12,7 @@ class RecipeFoodsController < ApplicationController
         else
           flash[:alert] = 'Failed to add ingredient!'
         end
-        redirect_to recipes_path
+        redirect_to recipe_path(params[:recipe_id])
       end
     end
   end
@@ -24,6 +24,6 @@ class RecipeFoodsController < ApplicationController
     else
       flash[:alert] = 'Failed to delete Ingredient!'
     end
-    redirect_to recipes_path
+    redirect_to recipe_path(params[:recipe_id])
   end
 end
