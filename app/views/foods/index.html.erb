@@ -1,0 +1,14 @@
+<div class="mx-3">
+    <%= render partial: "modal" %><br>
+</div>
+<h1 class="mx-3"> Your food: </h1><br>
+<div class="container">
+  <div class="row">
+    <% if @foods.empty? %>
+      <h3>You have no food yet!</h3>
+      <p>Try adding new food using the button above</p>
+    <% else %>
+      <%= render partial: "table" %>
+    <% end %>
+  </div>
+</div>
