@@ -6,7 +6,10 @@ class RecipesController < ApplicationController
   end
 
   def show
-    @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.includes(:recipe_foods).find(params[:id])
+    @foods = current_user.foods.all
+    @ingredients = Food.select('name, recipe_foods.id, user_id').joins(:recipe_foods).where("recipe_id = #{@recipe.id}")
+    # SELECT name,recipe_foods.id FROM foods JOIN recipe_foods ON recipe_foods.food_id = foods.id  WHERE recipe_id = 2;
   end
 
   def destroy
