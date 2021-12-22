@@ -23,13 +23,13 @@
 		            <label for="name" class="form-label">Quantity</label>
 		            <%= form.text_field :quantity, required: true, class: "form-control", id: "quantity"%>
 	            </div>
-              <br>       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <%= form.submit 'Save ingredients list', class: "btn btn-success" %>
-        <% end %>
-        <% end %>
+              <br>
+              <div class="text-end mt-3">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= form.submit 'Save food', class: "btn btn-success" %>
+            <% end %>
+            <% end %>
+          </div>         
       </div>
     </div>
   </div>
