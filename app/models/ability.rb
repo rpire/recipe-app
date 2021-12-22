@@ -12,6 +12,6 @@ class Ability
     # Define a few sample abilities
     can :create, [Recipe, Food]
     can :destroy, [Recipe, Food], user: user
-    can :read, :all
+    can :read, :all, public: false, user: user
   end
 end
