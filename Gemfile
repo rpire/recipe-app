@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # devise
 gem 'cancancan'
 gem 'devise'
+gem 'rspec-rails'
 gem 'rubocop'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
