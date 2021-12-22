@@ -1,0 +1,44 @@
+<% @recipes.each do |recipe| %>
+  <% total_sum = 0.00 %>
+  <section class="m-5">
+    <header class="d-flex">
+      <h2><%= recipe.name %></h2>
+      <%= link_to 'Go to this recipe', recipe_path(recipe.id), class: "btn btn-primary ms-3" %>
+    </header>
+    <h3>Shopping list:</h3>
+    <% if recipe.recipe_foods.empty? %>
+      <h4>This recipe has no added ingredients</h4>
+      <p>Try adding some ingredients to it!</p>
+    <% else %>
+      <table class="table table-info table-striped me-3">
+        <thead>
+          <tr>
+            <th scope="col" class="text-center">Food</th>
+            <th scope="col" class="text-center">Quantity</th>
+            <th scope="col" class="text-center">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% recipe.recipe_foods.each do |recipe_food| %>
+            <tr>
+              <th scope="row" class="text-center"><%= recipe_food.food.name %></th>
+              <td class="text-center"><%= recipe_food.quantity %> <%= recipe_food.food.measurement_unit %></td>
+              <% total_sum += recipe_food.food.price * recipe_food.quantity %>
+              <td class="text-center">$<%= recipe_food.food.price * recipe_food.quantity %></td>
+            </tr>
+          <% end %>
+        </tbody>
+        <tfoot>
+            <tr>
+              <th scope="row" class="text-end">Total ingredients:</th>
+              <td colspan="2" class="text-center"><%= recipe.recipe_foods.count%></td>
+            </tr>
+            <tr>
+              <th scope="row" class="text-end">Total price:</th>
+              <td colspan="2" class="text-center">$<%= total_sum %></td>
+            </tr>
+          </tfoot>
+      </table>
+    <% end %>
+  </section>
+<% end %>
