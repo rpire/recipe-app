@@ -34,13 +34,12 @@
 
                 </div>
                 <br>
-	            
-            
+	            <div class="text-end mt-3">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= form.submit 'Save food', class: "btn btn-success" %>
+            <% end %>
+          </div>   
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <%= form.submit 'Save recipe', class: "btn btn-success" %>
-        <% end %>
       </div>
     </div>
   </div>

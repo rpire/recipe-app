@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   end
   resources :foods, only: [:index, :new, :create, :destroy]
   resources :public_recipes, only: [:index]
+  resources :shopping_list, only: [:index]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
