@@ -5,8 +5,8 @@
 <div class="container">
   <div class="row">
     <% if @foods.empty? %>
-      <h3>You have no food yet!</h3>
-      <p>Try adding new food using the button above</p>
+      <h3 class="text-center">You have no food yet!</h3>
+      <p class="text-center">Try adding new food using the button above</p>
     <% else %>
       <%= render partial: "table" %>
     <% end %>

@@ -12,24 +12,24 @@
       </div>
       <div class="modal-body">
         <%= form_with scope: :food do |form| %>
-            <div class="mb-3">
+          <div class="mb-3">
             <label for="name" class="form-label">Name</label>
             <%= form.text_field :name, required: true, autofocus: true, class: "form-control", id: "name"%>
           </div>
           <div class="mb-3">
-                <label for="measurement-unit" class="form-label">Measurement unit</label>
+            <label for="measurement-unit" class="form-label">Measurement unit</label>
             <%= form.text_field :measurement_unit, required: true, class: "form-control", id: "measurement-unit" %>
           </div>
-            <div class="mb-3">
+          <div class="mb-5">
             <label for="price" class="form-label">Price (USD)</label>
             <%= form.text_field :price, required: true, class: "form-control", id: "price"%>
           </div>
-          <br>      
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <%= form.submit 'Save food', class: "btn btn-success" %>
-        <% end %>
+          <hr>
+          <div class="text-end mt-3">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <%= form.submit 'Save food', class: "btn btn-success" %>
+            <% end %>
+          </div>  
       </div>
     </div>
   </div>
