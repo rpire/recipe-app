@@ -5,6 +5,8 @@ class Ability
 
   def initialize(user)
     # Handle the case where we don't have a current_user i.e. the user is a guest
+    can :read, :all, public: true
+
     return unless user.present?
 
     # Define a few sample abilities
