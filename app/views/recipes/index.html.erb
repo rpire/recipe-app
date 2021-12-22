@@ -4,8 +4,13 @@
 <h1 class="mx-3"> Your recipes: </h1><br>
 <div class="container">
   <div class="row">
-    <% @recipes.each do |recipe| %>
+  <% if @recipes.empty? %>
+      <h3>You have no recipes yet!</h3>
+      <p>Try adding new recipes using the button above</p>
+    <% else %>
+      <% @recipes.each do |recipe| %>
          <%= render "recipe-card", recipe: recipe %>
+        <% end %>
     <% end %>
   </div>
 </div>

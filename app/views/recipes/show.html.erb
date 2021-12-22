@@ -3,8 +3,21 @@
   <div class="card-body">
     <h1 class="card-title"><%= @recipe.name %></h1>
     <p class="card-text my-5"><%= @recipe.description %></p>
+    <p class="card-text"><small class="text-muted">Ingredients:
+    <ul class="list-group">
+    <% @ingredients.each do |ingredient| %>
+      <% puts ingredient.recipe_foods.ids %>
+      <li class="list-group-item text-muted d-flex flex-row">
+      <p style="width: 10%;" class="my-auto"><%= ingredient.name %></p>
+      <% if current_user.id == ingredient.user_id %>
+        <%= link_to "Delete", "/recipes/#{@recipe.id}/recipe_foods/#{ingredient.id}", remote: true, method: :delete, class: "btn btn-outline-danger my-auto" %>
+      <% end %>
+      </li>
+    <% end %>
+    </small></p>
+    </ul> 
     <p class="card-text"><small class="text-muted">Preparation time: <%= @recipe.preparation_time %></small></p>
     <p class="card-text"><small class="text-muted">Cooking time: <%= @recipe.cooking_time%></small></p>
+    <%= render 'add-ingredient-modal', recipe: @recipe %>
   </div><br>
-  <button type="button" class="btn btn-success mt-3" style="width:18rem;">Add ingredient</button>
 </div>
