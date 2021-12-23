@@ -40,8 +40,7 @@ You can navigate the pages using the Nav Bar. The Nav Bar has routes to differen
 
 👤 **Robert A. Baiesita**
 - [GitHub](https://github.com/ReshyResh)
-- [LinkedIn](https://www.linkedin.com/in/reshyresh) <-- Also here.
-
+- [LinkedIn](https://www.linkedin.com/in/reshyresh)
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
