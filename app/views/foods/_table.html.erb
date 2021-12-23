@@ -1,0 +1,24 @@
+<table class="table table-info table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">Food</th>
+      <th scope="col" class="text-center">Measurement unit</th>
+      <th scope="col" class="text-center">Price</th>
+      <th scope="col" class="text-center">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @foods.each do |food| %>
+      <tr>
+        <th scope="row" class="text-center"><%= food.name %></th>
+        <td class="text-center"><%= food.measurement_unit %></td>
+        <td class="text-center">$<%= food.price %></td>
+        <td class="text-center">
+          <% if can? :destroy, food %>
+            <%= link_to "Delete", food, remote: true, method: :delete, class: "btn btn-danger" %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
