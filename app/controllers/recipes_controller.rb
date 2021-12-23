@@ -7,9 +7,8 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.includes(:recipe_foods).find(params[:id])
-    @foods = current_user.foods.all
+    @foods = current_user.foods.all if user_signed_in?
     @ingredients = Food.select('name, recipe_foods.id, user_id').joins(:recipe_foods).where("recipe_id = #{@recipe.id}")
-    # SELECT name,recipe_foods.id FROM foods JOIN recipe_foods ON recipe_foods.food_id = foods.id  WHERE recipe_id = 2;
   end
 
   def destroy
@@ -17,7 +16,7 @@ class RecipesController < ApplicationController
     if recipe.destroy
       flash[:notice] = 'Recipe deleted!'
     else
-      flash[:alert] = 'Failed to delete recipe!'
+      flash[:alert] = "Failed to remove recipe - #{recipe.errors.full_messages.first}"
     end
     redirect_to recipes_path
   end
@@ -29,7 +28,7 @@ class RecipesController < ApplicationController
         if @recipe.save
           flash[:notice] = 'Recipe was successfully created.'
         else
-          flash[:alert] = 'Failed to add recipe!'
+          flash[:alert] = "Failed to add recipe - #{@recipe.errors.full_messages.first}"
         end
         redirect_to recipes_path
       end

@@ -8,7 +8,7 @@ class FoodsController < ApplicationController
     if food.destroy
       flash[:notice] = 'Food removed!'
     else
-      flash[:alert] = 'Failed to remove food!'
+      flash[:alert] = "Failed to remove food - #{food.errors.full_messages.first}"
     end
     redirect_to foods_path
   end
@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
         if @food.save
           flash[:notice] = 'Food was successfully added.'
         else
-          flash[:alert] = @food.errors.full_messages.first
+          flash[:alert] = "Failed to save food - #{@food.errors.full_messages.first}"
         end
         redirect_to foods_path
       end

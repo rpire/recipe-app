@@ -10,7 +10,7 @@ class RecipeFoodsController < ApplicationController
         if @recipe_foods.save
           flash[:notice] = 'Ingredient succesfully added'
         else
-          flash[:alert] = 'Failed to add ingredient!'
+          flash[:alert] = "Failed to add ingredient - #{@recipe_foods.errors.full_messages.first}"
         end
         redirect_to recipe_path(params[:recipe_id])
       end
@@ -22,7 +22,7 @@ class RecipeFoodsController < ApplicationController
     if ingredient.destroy
       flash[:notice] = 'Ingredient deleted!'
     else
-      flash[:alert] = 'Failed to delete Ingredient!'
+      flash[:alert] = "Failed to remove ingredient - #{ingredient.errors.full_messages.first}"
     end
     redirect_to recipe_path(params[:recipe_id])
   end
