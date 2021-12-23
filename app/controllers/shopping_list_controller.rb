@@ -1,5 +1,5 @@
 class ShoppingListController < ApplicationController
   def index
-    @recipes = Recipe.includes(recipe_foods: :food).where(user_id: current_user.id)
+    @recipes = Recipe.includes(recipe_foods: :food).where(public: true).order(:updated_at)
   end
 end
